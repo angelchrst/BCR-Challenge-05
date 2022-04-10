@@ -47,10 +47,6 @@
   margin-bottom: 16px;
 }
 
-.detailCar .cardDetail .textDetail1 p {
-  margin-bottom: 5px;
-}
-
 .detailCar .cardDetail .textDetail2 {
   color: #8a8a8a;
   line-height: 175%;
@@ -59,19 +55,11 @@
   margin-bottom: 26px;
 }
 
-.detailCar .cardDetail .textDetail2 p {
-  margin-bottom: 5px;
-}
-
 .detailCar .cardDetail .textDetail3 {
   color: #8a8a8a;
   line-height: 175%;
   width: 557px;
   height: 225px;
-}
-
-.detailCar .cardDetail .textDetail3 p {
-  margin-bottom: 5px;
 }
 
 .detailCar .cardDetail .cardImage {
