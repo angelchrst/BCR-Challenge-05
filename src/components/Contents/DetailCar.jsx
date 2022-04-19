@@ -1,22 +1,27 @@
 import "../css/DetailCar.css";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import ButtonCar from "./ButtonCar";
 import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const DetailCar = () => {
   const { idCar } = useParams();
-  const [dataDetailCar, setDataDetailCar] = useState({});
+  const { dataListCar } = useSelector(
+    (globalStore) => globalStore.dataCarReducer
+  );
 
-  const getData = async () => {
-    const { data } = await axios(
-      `https://rent-cars-api.herokuapp.com/admin/car/${idCar}`
-    );
-    setDataDetailCar(data);
-  };
+  let index = 0;
+
+  for (let i = 0; i < dataListCar.length - 1; i++) {
+    if (dataListCar[i].id == idCar) {
+      index = i;
+    }
+  }
 
   useEffect(() => {
-    getData();
-  });
+    document.getElementsByClassName("buttonCard")[0].value ="Lanjutkan Pembayaran";
+    document.getElementsByClassName("buttonCard")[0].style.width ="358px";
+  }, []);
 
   return (
     <>
@@ -26,7 +31,9 @@ const DetailCar = () => {
           <p>Include</p>
           <div className="textDetail1">
             <ul>
-              <li>Apa saja yang termasuk dalam paket misal durasi max 12 jam</li>
+              <li>
+                Apa saja yang termasuk dalam paket misal durasi max 12 jam
+              </li>
               <li>Sudah termasuk bensin selama 12 jam</li>
               <li>Sudah termasuk Tiket Wisata</li>
               <li>Sudah termasuk pajak</li>
@@ -36,8 +43,10 @@ const DetailCar = () => {
           <div className="textDetail2">
             <ul>
               <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
-              <li>Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp
-              20.000/jam</li>
+              <li>
+                Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp
+                20.000/jam
+              </li>
               <li>Tidak termasuk akomodasi penginapan</li>
             </ul>
           </div>
@@ -45,26 +54,32 @@ const DetailCar = () => {
           <div className="textDetail3">
             <ul>
               <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
-              <li>Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp
-              20.000/jam</li>
+              <li>
+                Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp
+                20.000/jam
+              </li>
               <li>Tidak termasuk akomodasi penginapan</li>
               <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
-              <li>Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp
-              20.000/jam</li>
+              <li>
+                Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp
+                20.000/jam
+              </li>
               <li>Tidak termasuk akomodasi penginapan</li>
               <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
-              <li>Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp
-              20.000/jam</li>
+              <li>
+                Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp
+                20.000/jam
+              </li>
               <li>Tidak termasuk akomodasi penginapan</li>
             </ul>
           </div>
         </div>
         <div className="cardDetail">
           <div className="cardImage">
-            <img src={dataDetailCar.image} alt="car" />
+            <img src={dataListCar[index].image} alt="car" />
           </div>
           <div className="cardTitle">
-            <h1>{dataDetailCar.name}</h1>
+            <h1>{dataListCar[index].name}</h1>
             <div className="cardIcon">
               <div className="iconTitle">
                 <img src="/img/users.svg" alt="jumlah orang" />
@@ -81,9 +96,15 @@ const DetailCar = () => {
             </div>
             <div className="cardText">
               <p>Total</p>
-              <h1>Rp {dataDetailCar.price}</h1>
+              <h1>
+                Rp{" "}
+                {dataListCar[index].price
+                  .toFixed(0)
+                  .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")}{" "}
+                / hari
+              </h1>
             </div>
-            <button className="buttonCard">Lanjutkan Pembayaran</button>
+            <ButtonCar />
           </div>
         </div>
       </div>

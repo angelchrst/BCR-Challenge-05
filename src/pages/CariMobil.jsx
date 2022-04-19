@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 const CariMobil = () => {
   useEffect(() => {
     document.getElementsByClassName("btn-hero")[0].style.display = "none";
+    document.title = "Cari Mobil";
     console.log('mount it!');
 }, []);
   return (
