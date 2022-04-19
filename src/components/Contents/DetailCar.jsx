@@ -10,9 +10,9 @@ const DetailCar = () => {
     (globalStore) => globalStore.dataCarReducer
   );
 
-  let index = 0;
+  let index = -1;
 
-  for (let i = 0; i < dataListCar.length - 1; i++) {
+  for (let i = 0; i < dataListCar.length; i++) {
     if (dataListCar[i].id == idCar) {
       index = i;
     }
