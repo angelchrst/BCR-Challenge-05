@@ -10,11 +10,11 @@ const DetailCar = () => {
     (globalStore) => globalStore.dataCarReducer
   );
 
-  let index = -1;
+  let i = -1;
 
-  for (let i = 0; i < dataListCar.length; i++) {
-    if (dataListCar[i].id == idCar) {
-      index = i;
+  for (let j = 0; j < dataListCar.length; j++) {
+    if (dataListCar[j].id == idCar) {
+      i = j;
     }
   }
 
@@ -76,10 +76,10 @@ const DetailCar = () => {
         </div>
         <div className="cardDetail">
           <div className="cardImage">
-            <img src={dataListCar[index].image} alt="car" />
+            <img src={dataListCar[i].image} alt="car" />
           </div>
           <div className="cardTitle">
-            <h1>{dataListCar[index].name}</h1>
+            <h1>{dataListCar[i].name}</h1>
             <div className="cardIcon">
               <div className="iconTitle">
                 <img src="/img/users.svg" alt="jumlah orang" />
@@ -98,7 +98,7 @@ const DetailCar = () => {
               <p>Total</p>
               <h1>
                 Rp{" "}
-                {dataListCar[index].price
+                {dataListCar[i].price
                   .toFixed(0)
                   .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")}{" "}
                 / hari
