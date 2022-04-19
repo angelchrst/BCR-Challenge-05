@@ -19,8 +19,8 @@ const DetailCar = () => {
   }
 
   useEffect(() => {
-    document.getElementsByClassName("buttonCard")[0].value ="Lanjutkan Pembayaran";
-    document.getElementsByClassName("buttonCard")[0].style.width ="358px";
+    document.getElementsByClassName("buttonCar")[0].value ="Lanjutkan Pembayaran";
+    document.getElementsByClassName("buttonCar")[0].style.width ="358px";
   }, []);
 
   return (
