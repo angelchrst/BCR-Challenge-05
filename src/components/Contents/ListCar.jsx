@@ -11,7 +11,7 @@ const ListCar = () => {
     <>
       <div className="container">
         <div className="listCar">
-          {dataListCar.map((data) => (
+          {dataListCar?.map((data) => (
             <div className="cardMobil">
               <div className="frameCard">
                 <img className="cardImage" src={data.image} alt="mobil" />
