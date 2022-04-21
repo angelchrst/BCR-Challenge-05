@@ -1,6 +1,12 @@
+@media (min-width: 1400px) {
+	.listCar {
+    margin-left: 115px !important;
+	}
+}
+
 .listCar {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   flex-wrap: wrap;
   padding: 0px;
   margin-top: 100px;
