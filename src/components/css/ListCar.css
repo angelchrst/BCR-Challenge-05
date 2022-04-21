@@ -6,10 +6,9 @@
 
 .listCar {
   display: flex;
-  /* flex-direction: row; */
   flex-wrap: wrap;
   padding: 0px;
-  margin-top: 100px;
+  margin-top: 80px;
   margin-left: 25px;
   width: 1047px;
 }
@@ -19,6 +18,7 @@
   flex-direction: column;
   padding: 24px;
   margin-left: 16px;
+  margin-top: 20px;
   width: 333px;
   height: 514px;
   left: 0px;
@@ -26,14 +26,6 @@
   background: #ffffff;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
-}
-
-.listCar .cardMobil:nth-child(4) {
-  margin-top: 20px;
-}
-
-.listCar .cardMobil:last-child {
-    margin-top: 20px;
 }
 
 .listCar .cardMobil .frameCard {
